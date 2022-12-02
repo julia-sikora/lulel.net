@@ -13,6 +13,6 @@ class HelloController extends AbstractController
     #[Route('/')]
     public function homepage(): Response
     {
-        return new Response("Hello!");
+        return $this->render('homepage.html.twig');
     }
 }
