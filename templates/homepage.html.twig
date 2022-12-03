@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage :){% endblock %}
+
+{% block body %}
+    <div id="welcome">
+        Welcome on page lulel.net !
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+        #welcome {
+            text-align: center;
+            margin-top: 5%;
+            font-size: 5em;
+            font-family: 'Nerko One', cursive;
+            color: white;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            background-size: 1800% 1800%;
+
+            -webkit-animation: rainbow 18s ease infinite;
+            -z-animation: rainbow 18s ease infinite;
+            -o-animation: rainbow 18s ease infinite;
+            animation: rainbow 18s ease infinite;
+        }
+
+        @-webkit-keyframes rainbow {
+            0% {
+                background-position: 0% 82%
+            }
+            50% {
+                background-position: 100% 19%
+            }
+            100% {
+                background-position: 0% 82%
+            }
+        }
+
+        @-moz-keyframes rainbow {
+            0% {
+                background-position: 0% 82%
+            }
+            50% {
+                background-position: 100% 19%
+            }
+            100% {
+                background-position: 0% 82%
+            }
+        }
+
+        @-o-keyframes rainbow {
+            0% {
+                background-position: 0% 82%
+            }
+            50% {
+                background-position: 100% 19%
+            }
+            100% {
+                background-position: 0% 82%
+            }
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 82%
+            }
+            50% {
+                background-position: 100% 19%
+            }
+            100% {
+                background-position: 0% 82%
+            }
+        }
+    </style>
+{% endblock %}
