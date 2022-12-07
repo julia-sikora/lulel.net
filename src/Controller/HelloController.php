@@ -7,12 +7,18 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Translation\LocaleSwitcher;
 
 class HelloController extends AbstractController
 {
-    #[Route('/')]
-    public function homepage(): Response
+    private const DEFAULT_LANGUAGE = 'en';
+
+    #[Route('/{lang}', name: 'app_homepage_lang')]
+    #[Route('/', name: 'app_homepage')]
+    public function homepage(LocaleSwitcher $localeSwitcher, ?string $lang = self::DEFAULT_LANGUAGE): Response
     {
+        $localeSwitcher->setLocale($lang ?? self::DEFAULT_LANGUAGE);
+        // ??
         return $this->render('homepage.html.twig');
     }
 }
