@@ -1,10 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Homepage :){% endblock %}
+{% block title %}{{ "homepage.title" | trans }}{% endblock %}
 
 {% block body %}
+    <div id="flags">
+        <a href="{{ path('app_homepage_lang', {'lang': "en"}) }}">
+            <img src="{{ asset('en.png') }}" alt="en" class="flag"> </a>
+        <a href="{{ path('app_homepage_lang', {'lang': "de"}) }}">
+            <img src="{{ asset('de.png') }}" alt="de" class="flag"> </a>
+        <a href="{{ path('app_homepage_lang', {'lang': "pl"}) }}">
+            <img src="{{ asset('pl.png') }}" alt="pl" class="flag"> </a>
+    </div>
     <div id="welcome">
-        Welcome to our website!
+        {{ "homepage.text" | trans }}
     </div>
 {% endblock %}
 
@@ -25,6 +33,16 @@
             color: white;
         }
 
+        .flag {
+            width: 3em;
+        }
+        #flags {
+            text-align: right;
+        }
+        a {
+            text-decoration: none !important;
+            border: 0 !important;
+        }
         html {
             height: 100%;
             width: 100%;
