@@ -11,14 +11,12 @@ use Symfony\Component\Translation\LocaleSwitcher;
 
 class HelloController extends AbstractController
 {
-    private const DEFAULT_LANGUAGE = 'en';
+    private const DEFAULT_LANGUAGE = 'de';
 
     #[Route('/{lang}', name: 'app_homepage_lang')]
-    #[Route('/', name: 'app_homepage')]
-    public function homepage(LocaleSwitcher $localeSwitcher, ?string $lang = self::DEFAULT_LANGUAGE): Response
+    public function homepage(LocaleSwitcher $localeSwitcher, string $lang = self::DEFAULT_LANGUAGE): Response
     {
-        $localeSwitcher->setLocale($lang ?? self::DEFAULT_LANGUAGE);
-        // ??
+        $localeSwitcher->setLocale($lang );
         return $this->render('homepage.html.twig');
     }
 }
