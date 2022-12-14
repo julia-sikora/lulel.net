@@ -11,7 +11,7 @@ use Symfony\Component\Translation\LocaleSwitcher;
 
 class HelloController extends AbstractController
 {
-    private const DEFAULT_LANGUAGE = 'de';
+    private const DEFAULT_LANGUAGE = 'en';
 
     #[Route('/{lang}', name: 'app_homepage_lang')]
     public function homepage(LocaleSwitcher $localeSwitcher, string $lang = self::DEFAULT_LANGUAGE): Response
