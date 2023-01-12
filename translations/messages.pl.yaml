@@ -1,3 +1,20 @@
 homepage:
     title: "Strona główna :)"
     text: "Witaj na naszej stronie!"
+
+register:
+    form:
+        email: "Adres e-mail: "
+        name: "Nickname: "
+        password: "Hasło: "
+        app_password: "Hasło rejestracji: "
+        save: "Utwórz konto :)"
+    title: "Rejestracja :)"
+    text: "Podaj swoje dane i zarejestruj nowe konto:"
+
+login:
+    title: "Logowanie :)"
+    text: "Podaj swój adres e-mail, aby się zalogować:"
+    password: "Hasło:"
+    email: "Adres e-mail: "
+    button: 'Zaloguj się :)'
