@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -28,6 +30,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 20)]
     private ?string $nickname = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Filament::class)]
+    private Collection $filaments;
+
+    public function __construct()
+    {
+        $this->filaments = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +100,33 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNickname(string $nickname): self
     {
         $this->nickname = $nickname;
+
+        return $this;
+    }
+
+    /** @return Collection<int, Filament> */
+    public function getFilaments(): Collection
+    {
+        return $this->filaments;
+    }
+
+    public function addFilament(Filament $filament): self
+    {
+        if (!$this->filaments->contains($filament)) {
+            $this->filaments->add($filament);
+            $filament->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFilament(Filament $filament): self
+    {
+        if ($this->filaments->removeElement($filament)) {
+            if ($filament->getUser() === $this) {
+                $filament->setUser(null);
+            }
+        }
 
         return $this;
     }

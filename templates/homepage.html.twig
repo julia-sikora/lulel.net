@@ -3,14 +3,6 @@
 {% block title %}{{ "homepage.title" | trans }}{% endblock %}
 
 {% block body %}
-    <div id="flags">
-        <a href="{{ path('app_homepage', {'_locale': "en"}) }}">
-            <img src="{{ asset('en.png') }}" alt="en" class="flag"> </a>
-        <a href="{{ path('app_homepage', {'_locale': "de"}) }}">
-            <img src="{{ asset('de.png') }}" alt="de" class="flag"> </a>
-        <a href="{{ path('app_homepage', {'_locale': "pl"}) }}">
-            <img src="{{ asset('pl.png') }}" alt="pl" class="flag"> </a>
-    </div>
     <div id="welcome">
         {{ "homepage.text" | trans }}
     </div>

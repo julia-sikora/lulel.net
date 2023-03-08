@@ -11,6 +11,9 @@ register:
         save: "Konto erstellen :)"
     title: "Registrierung :)"
     text: "Geben Sie Ihre Daten ein und registrieren Sie Ihr neues Konto:"
+    flash:
+        account_added: "Konto hinzugefügt."
+        app_password: "Registrierungspasswort ist falsch."
 
 login:
     title: "Anmelden :)"
@@ -18,3 +21,35 @@ login:
     password: "Passwort:"
     email: "e-Mail Addresse: "
     button: 'Anmelden :)'
+    keep_me_login: 'Bleiben eingeloggt'
+
+filament:
+    flash:
+        permission: "Du hast keine Berechtigung"
+    title_edit: "Edit filament"
+    title_index: "Deine Filamente"
+    heading_index: "Filamentdetails"
+    title_show: "Filamentdetails"
+    new:
+        heading: "Create new Filament"
+        title: "New filament"
+
+    fields:
+        file_valid: "Upload a valid file"
+        file_name: "file_name"
+        save: "Speichern"
+        id: "Identität"
+        producer: "Produzent"
+        name: "Name"
+        color: "Farbe"
+        material: "Material"
+        temperature_extruder: "Extrudertemperatur"
+        temperature_table: "Tischtemperatur"
+        purchase_date: "Erwerbsdatum"
+        no_records: "Keine Daten gefunden!"
+        create_new: "Neu erstellen"
+    button:
+        back_to_list: "Zurück zur Liste"
+        edit: "Bearbeiten"
+        delete: "Löschen"
+        show: "Show"

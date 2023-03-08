@@ -19,6 +19,19 @@
         {% endblock %}
     </head>
     <body>
+        <div id="flags">
+            <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': "en"}) ) }}">
+                <img src="{{ asset('en.png') }}" alt="en" class="flag"> </a>
+            <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': "de"})) }}">
+                <img src="{{ asset('de.png') }}" alt="de" class="flag"> </a>
+            <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': "pl"})) }}">
+                <img src="{{ asset('pl.png') }}" alt="pl" class="flag"> </a>
+        </div>
+        {% for message in app.flashes('notice') %}
+            <div class="alert alert-success">
+                {{ message | trans }}
+            </div>
+        {% endfor %}
         {% block body %}{% endblock %}
     </body>
 </html>
