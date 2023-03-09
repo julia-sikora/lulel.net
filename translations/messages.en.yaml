@@ -26,6 +26,7 @@ login:
 filament:
     flash:
         permission: "You don't have a permission"
+        delete: "Are you sure you want to delete this item?"
     title_edit: "Edit filament"
     title_index: "Your filaments"
     heading_index: "Filaments details"

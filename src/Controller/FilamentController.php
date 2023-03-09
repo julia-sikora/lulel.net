@@ -34,15 +34,13 @@ class FilamentController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            /** @var UploadedFile $brochureFile */
-            $brochureFile = $form->get('file')->getData();
-            if ($brochureFile) {
-                $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
+            $file = $form->get('file')->getData();
+            if ($file) {
+                $originalFilename = pathinfo($fileile->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $brochureFile->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $fileile->guessExtension();
                 try {
-                    $brochureFile->move(
+                    $fileile->move(
                         $this->getParameter('app.files_directory'),
                         $newFilename
                     );
@@ -84,14 +82,14 @@ class FilamentController extends AbstractController
         $form = $this->createForm(FilamentType::class, $filament);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $brochureFile */
-            $brochureFile = $form->get('file')->getData();
-            if ($brochureFile) {
-                $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
+            /** @var UploadedFile $fileile */
+            $file = $form->get('file')->getData();
+            if ($file) {
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $brochureFile->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $file->guessExtension();
                 try {
-                    $brochureFile->move(
+                    $file->move(
                         $this->getParameter('app.files_directory'),
                         $newFilename
                     );
