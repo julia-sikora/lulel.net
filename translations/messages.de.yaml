@@ -26,19 +26,18 @@ login:
 filament:
     flash:
         permission: "Du hast keine Berechtigung"
-    title_edit: "Edit filament"
+    title_edit: "Filament editieren"
     title_index: "Deine Filamente"
     heading_index: "Filamentdetails"
     title_show: "Filamentdetails"
     new:
-        heading: "Create new Filament"
-        title: "New filament"
-
+        heading: "Neues Filament erstellen"
+        title: "Neues Filament"
     fields:
-        file_valid: "Upload a valid file"
-        file_name: "file_name"
-        save: "Speichern"
-        id: "Identität"
+        file_valid: "Laden Sie eine richtige Datei hoch."
+        file_name: "Dateiname"
+        save: "Weiter"
+        id: "Identifikationsnummer"
         producer: "Produzent"
         name: "Name"
         color: "Farbe"
@@ -52,4 +51,4 @@ filament:
         back_to_list: "Zurück zur Liste"
         edit: "Bearbeiten"
         delete: "Löschen"
-        show: "Show"
+        show: "Zeigen"

@@ -5,10 +5,10 @@
 {% block body %}
     <h1>{{ "filament.heading_index" | trans }}</h1>
 
-        {% if filaments is empty %}
-<h2>{{ "filament.fields.no_records" | trans }}</h2>
-        {% else %}
-            <table class="table">
+    {% if filaments is empty %}
+        <h2>{{ "filament.fields.no_records" | trans }}</h2>
+    {% else %}
+        <table class="table">
             <thead>
             <tr>
                 <th>{{ "filament.fields.id"  | trans }}</th>
@@ -32,14 +32,24 @@
                     <td>{{ filament.temperatureExtruder }}</td>
                     <td>{{ filament.temperatureTable }}</td>
                     <td>{{ filament.purchaseDate ? filament.purchaseDate|date('Y-m-d H:i:s') : '' }}</td>
-                    <td>
-                        <a href="{{ path('app_filament_show', {'id': filament.id}) }}">{{ "filament.button.show" | trans }}</a>
-                        <a href="{{ path('app_filament_edit', {'id': filament.id}) }}">{{ "filament.button.edit" | trans }}</a>
+
+                    <td style="border:none;">
+                        &nbsp<a>
+                            <button class="button">
+                                <a href="{{ path('app_filament_show', {'id': filament.id}) }}">{{ "filament.button.show" | trans }}</a>
+                            </button>
+                            |
+                            <a>
+                                <button class="button">
+                                    <a href="{{ path('app_filament_edit', {'id': filament.id}) }}">{{ "filament.button.edit" | trans }}</a>
+                                </button>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
-            </table>
-        {% endif %}
-    <a href="{{ path('app_filament_new') }}">{{ "filament.fields.create_new" | trans }}</a>
+        </table>
+    {% endif %}
+    <br>
+    <button class="button"><a href="{{ path('app_filament_new') }}">{{ "filament.fields.create_new" | trans }}</a>
+    </button>
 {% endblock %}
