@@ -3,109 +3,12 @@
 {% block title %}{{ "homepage.title" | trans }}{% endblock %}
 
 {% block body %}
-    <div id="flags">
-        <a href="{{ path('app_homepage_lang', {'lang': "en"}) }}">
-            <img src="{{ asset('en.png') }}" alt="en" class="flag"> </a>
-        <a href="{{ path('app_homepage_lang', {'lang': "de"}) }}">
-            <img src="{{ asset('de.png') }}" alt="de" class="flag"> </a>
-        <a href="{{ path('app_homepage_lang', {'lang': "pl"}) }}">
-            <img src="{{ asset('pl.png') }}" alt="pl" class="flag"> </a>
-    </div>
     <div id="welcome">
         {{ "homepage.text" | trans }}
     </div>
-{% endblock %}
 
-{% block stylesheets %}
+    <div id="subpages">
+    <a href="{{ path('app_filament_index')}}"> <img src="{{ asset('filament.jpg') }}" alt="filament" class="subpages"> </a>
+    </div>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-
-        #welcome {
-            text-align: center;
-            margin-top: 5%;
-            font-size: 5em;
-            font-family: 'Nerko One', cursive;
-            color: white;
-        }
-
-        .flag {
-            width: 3em;
-        }
-        #flags {
-            text-align: right;
-        }
-        a {
-            text-decoration: none !important;
-            border: 0 !important;
-        }
-        html {
-            height: 100%;
-            width: 100%;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            position: absolute;
-            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-            background-size: 1800% 1800%;
-
-            -webkit-animation: rainbow 18s ease infinite;
-            -z-animation: rainbow 18s ease infinite;
-            -o-animation: rainbow 18s ease infinite;
-            animation: rainbow 18s ease infinite;
-        }
-
-        @-webkit-keyframes rainbow {
-            0% {
-                background-position: 0% 82%
-            }
-            50% {
-                background-position: 100% 19%
-            }
-            100% {
-                background-position: 0% 82%
-            }
-        }
-
-        @-moz-keyframes rainbow {
-            0% {
-                background-position: 0% 82%
-            }
-            50% {
-                background-position: 100% 19%
-            }
-            100% {
-                background-position: 0% 82%
-            }
-        }
-
-        @-o-keyframes rainbow {
-            0% {
-                background-position: 0% 82%
-            }
-            50% {
-                background-position: 100% 19%
-            }
-            100% {
-                background-position: 0% 82%
-            }
-        }
-
-        @keyframes rainbow {
-            0% {
-                background-position: 0% 82%
-            }
-            50% {
-                background-position: 100% 19%
-            }
-            100% {
-                background-position: 0% 82%
-            }
-        }
-    </style>
 {% endblock %}
