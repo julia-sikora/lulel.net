@@ -1,5 +1,5 @@
 <form method="post" action="{{ path('app_filament_delete', {'id': filament.id}) }}"
       onsubmit="return confirm('{{ "filament.flash.delete" | trans }}');">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ filament.id) }}">
-    <button class="btn"> {{ "filament.button.delete" | trans }} </button>
+    <button class="button"> {{ "filament.button.delete" | trans }} </button>
 </form>

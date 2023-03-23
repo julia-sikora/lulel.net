@@ -1,14 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
 
-button {
-    margin-top: 2%;
-    font-size: 20px;
-    font-family: 'Nerko One', cursive;
-    color: white;
-    border-radius: 10px;
+#search-button:hover {
+    color: white !important;
+    background-color: #212529!important;
+    border-color: white !important;
+}
+#search-button {
+    color: rgba(255,255,255,.55) !important;
+    border-color: rgba(255,255,255,.55) !important;
+}
+.button a{
+    color: rgba(255,255,255,.55) !important;
+}
+.button {
+    border-radius: 0.25rem !important;
     border: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    font-weight: normal;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    font-weight: 10px;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    font-size: 20px !important;
+}
+.button:hover {
+    color: rgba(255,255,255,.55) !important;
+    border-radius: 0.25rem !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    font-size: 20px !important;
+}
+.form-group
+{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    margin-left: 5px !important;
+    line-height: normal !important;
+}
+.input-control
+{
+    width: auto !important;
+}
+thead,
+table,
+tbody,
+tfoot,
+tr,
+td,
+th {
+    border-color: black !important;
 }
 .subpages {
     width: 15%;
@@ -16,16 +55,36 @@ button {
     margin-left: 20%;
     margin-top: 50px;
 }
+.home {
+    width: 3%;
+}
 a {
-    color: white;
-    font-size: 20px;
-    text-decoration-line: none;
+    color: black;
+    font-size: 20px !important;
+    text-decoration-line: none !important;
+}
+a:hover{
+    color: white !important;
+    font-size: 20px !important;
+    text-decoration-line: none !important;
+}
+.a-register {
+    color: black !important;
+    font-size: 20px !important;
+    text-decoration-line:underline !important;
+}
+.a-register:hover{
+    color: white !important;
+    font-size: 20px !important;
 }
 label {
-    margin-top: 5%;
+    margin-top: 1%;
     font-size: 2em;
     display: table-cell;
     text-align: right;
+}
+.label-form {
+    font-size: 25px !important;
 }
 
 input {
@@ -33,7 +92,7 @@ input {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 35px !important;
     font-weight: normal;
 }
 
@@ -47,20 +106,22 @@ html {
     top: 0;
     bottom: 0;
     position: absolute;
+}
+
+body {
     background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
     background-size: 1800% 1800%;
-
     -webkit-animation: rainbow 18s ease infinite;
     -z-animation: rainbow 18s ease infinite;
     -o-animation: rainbow 18s ease infinite;
     animation: rainbow 18s ease infinite;
 }
 
-
 #image {
     height: 150px;
     border-radius: 50%;
 }
+
 .frame {
     border-radius: 50%;
     width: 225px;
@@ -68,6 +129,7 @@ html {
     background: #eee;
     padding: 10px 10px;
 }
+
 #welcome {
     text-align: center;
     margin-top: 5%;
@@ -77,15 +139,20 @@ html {
 #flags {
     text-align: right;
 }
+
 .flag {
     width: 3em;
 }
 
 .table {
+    border-color: black;
     font-size: 20px;
     font-weight: normal;
+    width: 65% !important;
 }
+
 th, td {
+    border-color: black;
     border-bottom: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
@@ -105,6 +172,7 @@ th, td {
         background-position: 0% 82%
     }
 }
+
 @-moz-keyframes rainbow {
     0% {
         background-position: 0% 82%
@@ -116,6 +184,7 @@ th, td {
         background-position: 0% 82%
     }
 }
+
 @-o-keyframes rainbow {
     0% {
         background-position: 0% 82%
@@ -127,6 +196,7 @@ th, td {
         background-position: 0% 82%
     }
 }
+
 @keyframes rainbow {
     0% {
         background-position: 0% 82%
@@ -138,3 +208,4 @@ th, td {
         background-position: 0% 82%
     }
 }
+

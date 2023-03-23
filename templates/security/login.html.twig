@@ -3,25 +3,27 @@
 {% block title %}{{ "login.title" | trans }}{% endblock %}
 
 {% block body %}
-
+    {% include('flags.html.twig') %}
     <form method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
         <h1> {{ "login.text" | trans }} </h1>
-        <label for="inputEmail">{{ "login.email" | trans }}</label>
-        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-        <br>
-        <label for="inputPassword">{{ "login.password" | trans }}</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-        <label>
-            <input type="checkbox" name="_remember_me" checked/>
-            {{ "login.keep_me_login" | trans }}
-        </label>
-        <br>
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-        <button class="btn btn-lg btn-primary" type="submit">{{ "login.button" | trans }}</button>
-    </form>
+        <div class="form-group">
+            <label class="label-control label-form" for="inputEmail">{{ "login.email" | trans }}</label>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control input-control" autocomplete="email" required autofocus>
+            <br>
+            <label  class="label-control label-form" for="inputPassword">{{ "login.password" | trans }}</label>
+            <input type="password" name="password" id="inputPassword" class="form-control input-control" autocomplete="current-password" required>
+            <label  class="label-control label-form" >
+                <input type="checkbox" name="_remember_me" checked/>
+                {{ "login.keep_me_login" | trans }}
+            </label>
+            <br>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <button class="button" type="submit">{{ "login.button" | trans }}</button> <br>
+            <a class="a-register" href="{{ path('app_register') }}"> {{ "login.register" | trans }} </a>
+        </div></form>
 {% endblock %}
 
 
