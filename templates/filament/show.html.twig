@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "filament.title_show" | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ "filament.title_show" | trans }} {{ filament.id }}</h1>
+    {% if filament.filename is not empty %}
+        <div class="frame"><img src="{{ asset('uploads/files/' ~ filament.filename) }}" id="image"></div>
+    {% endif %}
+    <br>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>{{ "filament.fields.id" | trans }}</th>
+            <td>{{ filament.id }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.fields.producer" | trans }}</th>
+            <td>{{ filament.producer }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.fields.name" | trans }}</th>
+            <td>{{ filament.name }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.fields.color" | trans }}</th>
+            <td>{{ filament.color }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.fields.material" | trans }}</th>
+            <td>{{ filament.material }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.fields.temperature_extruder" | trans }}</th>
+            <td>{{ filament.temperatureExtruder }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.fields.temperature_table" | trans }}</th>
+            <td>{{ filament.temperatureTable }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.fields.purchase_date" | trans }}</th>
+            <td>{{ filament.purchaseDate ? filament.purchaseDate|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <button class="button"><a href="{{ path('app_filament_index') }}">{{ "filament.button.back_to_list" | trans }}</a>
+    </button>
+    <button class="button">
+        <a href="{{ path('app_filament_edit', {'id': filament.id}) }}">{{ "filament.button.edit" | trans }}</a></button>
+    {{ include('filament/_delete_form.html.twig') }}
+{% endblock %}

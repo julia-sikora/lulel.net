@@ -5,8 +5,13 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +19,19 @@
         {% endblock %}
     </head>
     <body>
+        <div id="flags">
+            <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': "en"}) ) }}">
+                <img src="{{ asset('en.png') }}" alt="en" class="flag"> </a>
+            <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': "de"})) }}">
+                <img src="{{ asset('de.png') }}" alt="de" class="flag"> </a>
+            <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': "pl"})) }}">
+                <img src="{{ asset('pl.png') }}" alt="pl" class="flag"> </a>
+        </div>
+        {% for message in app.flashes('notice') %}
+            <div class="alert alert-success">
+                {{ message | trans }}
+            </div>
+        {% endfor %}
         {% block body %}{% endblock %}
     </body>
 </html>

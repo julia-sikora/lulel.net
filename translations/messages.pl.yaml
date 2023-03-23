@@ -1,3 +1,54 @@
 homepage:
     title: "Strona główna :)"
     text: "Witaj na naszej stronie!"
+
+register:
+    form:
+        email: "Adres e-mail: "
+        name: "Nickname: "
+        password: "Hasło: "
+        app_password: "Hasło rejestracji: "
+        save: "Utwórz konto :)"
+    title: "Rejestracja :)"
+    text: "Podaj swoje dane i zarejestruj nowe konto:"
+    flash:
+        account_added: "Konto dodane."
+        app_password: "Hasło rejestracji niepoprawne."
+
+login:
+    title: "Logowanie :)"
+    text: "Podaj swój adres e-mail, aby się zalogować:"
+    password: "Hasło:"
+    email: "Adres e-mail: "
+    button: 'Zaloguj się :)'
+    keep_me_login: 'Zapamiętaj mnie'
+
+filament:
+    flash:
+        permission: "Nie masz uprawnień"
+    title_edit: "Edycja filamentu"
+    title_index: "Twoje filamenty"
+    heading_index: "Parametry filamentów"
+    title_show: "Parametry filamentu"
+    new:
+        heading: "Stwórz nowy filament"
+        title: "Nowy filament"
+    fields:
+        file_valid: "Wyślij prawidłowy plik!"
+        file_name: "Nazwa pliku"
+        save: "Zapisz"
+        id: "Pozycja identyfikacyjna"
+        producer: "Producent"
+        name: "Nazwa"
+        color: "Kolor"
+        material: "Materiał"
+        temperature_extruder: "Temperatura extrudera"
+        temperature_table: "Temperatura stołu"
+        purchase_date: "Data nabycia"
+        no_records: "Brak pozycji!"
+        create_new: "Stwórz nowe pozycje"
+    button:
+        back_to_list: "Wróć do listy"
+        edit: "Edytuj"
+        delete: "Usuń"
+        show: "Szczegóły"
