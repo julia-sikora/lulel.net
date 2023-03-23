@@ -36,11 +36,11 @@ class FilamentController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $file = $form->get('file')->getData();
             if ($file) {
-                $originalFilename = pathinfo($fileile->getClientOriginalName(), PATHINFO_FILENAME);
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename . '-' . uniqid() . '.' . $fileile->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $file->guessExtension();
                 try {
-                    $fileile->move(
+                    $file->move(
                         $this->getParameter('app.files_directory'),
                         $newFilename
                     );
@@ -82,7 +82,7 @@ class FilamentController extends AbstractController
         $form = $this->createForm(FilamentType::class, $filament);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $fileile */
+            /** @var UploadedFile $file */
             $file = $form->get('file')->getData();
             if ($file) {
                 $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
