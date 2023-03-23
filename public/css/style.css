@@ -2,44 +2,48 @@
 
 #search-button:hover {
     color: white !important;
-    background-color: #212529!important;
+    background-color: #212529 !important;
     border-color: white !important;
 }
+
 #search-button {
-    color: rgba(255,255,255,.55) !important;
-    border-color: rgba(255,255,255,.55) !important;
+    color: rgba(255, 255, 255, .55) !important;
+    border-color: rgba(255, 255, 255, .55) !important;
 }
-.button a{
-    color: rgba(255,255,255,.55) !important;
+
+.button a {
+    color: rgba(255, 255, 255, .55) !important;
 }
+
 .button {
     border-radius: 0.25rem !important;
     border: none;
     background-color: rgba(0, 0, 0, 0.5) !important;
-    font-weight: 10px;
     margin-top: 10px !important;
     margin-bottom: 5px !important;
     font-size: 20px !important;
 }
+
 .button:hover {
-    color: rgba(255,255,255,.55) !important;
+    color: rgba(255, 255, 255, .55) !important;
     border-radius: 0.25rem !important;
     background-color: rgba(0, 0, 0, 0.5) !important;
     margin-top: 10px !important;
     margin-bottom: 5px !important;
     font-size: 20px !important;
 }
-.form-group
-{
+
+.form-group {
     margin-top: 5px !important;
     margin-bottom: 5px !important;
     margin-left: 5px !important;
     line-height: normal !important;
 }
-.input-control
-{
+
+.input-control {
     width: auto !important;
 }
+
 thead,
 table,
 tbody,
@@ -49,40 +53,48 @@ td,
 th {
     border-color: black !important;
 }
+
 .subpages {
     width: 15%;
     border-radius: 80px;
     margin-left: 20%;
     margin-top: 50px;
 }
+
 .home {
     width: 3%;
 }
+
 a {
     color: black;
     font-size: 20px !important;
     text-decoration-line: none !important;
 }
-a:hover{
+
+a:hover {
     color: white !important;
     font-size: 20px !important;
     text-decoration-line: none !important;
 }
+
 .a-register {
     color: black !important;
     font-size: 20px !important;
-    text-decoration-line:underline !important;
+    text-decoration-line: underline !important;
 }
-.a-register:hover{
+
+.a-register:hover {
     color: white !important;
     font-size: 20px !important;
 }
+
 label {
     margin-top: 1%;
     font-size: 2em;
     display: table-cell;
     text-align: right;
 }
+
 .label-form {
     font-size: 25px !important;
 }
