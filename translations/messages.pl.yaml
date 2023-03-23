@@ -1,5 +1,5 @@
 homepage:
-    title: "Strona główna :)"
+    title: "Strona główna"
     text: "Witaj na naszej stronie!"
 
 register:
@@ -9,14 +9,15 @@ register:
         password: "Hasło: "
         app_password: "Hasło rejestracji: "
         save: "Utwórz konto :)"
-    title: "Rejestracja :)"
+    title: "Rejestracja"
     text: "Podaj swoje dane i zarejestruj nowe konto:"
     flash:
         account_added: "Konto dodane."
         app_password: "Hasło rejestracji niepoprawne."
 
 login:
-    title: "Logowanie :)"
+    register: "Nie masz jeszcze konta? Zajerestruj się!"
+    title: "Logowanie"
     text: "Podaj swój adres e-mail, aby się zalogować:"
     password: "Hasło:"
     email: "Adres e-mail: "
@@ -24,6 +25,14 @@ login:
     keep_me_login: 'Zapamiętaj mnie'
 
 filament:
+    navbar:
+        logout: "Wyloguj"
+        profile: "Mój profil"
+        contact: "Kontakt"
+        filament: "Filament-logo"
+        create_new: "Stwórz nowy"
+        back_to_homepage: "Powrót do strony głównej"
+        change_language: "Zmień język"
     flash:
         permission: "Nie masz uprawnień"
     title_edit: "Edycja filamentu"
@@ -35,7 +44,7 @@ filament:
         title: "Nowy filament"
     fields:
         file_valid: "Wyślij prawidłowy plik!"
-        file_name: "Nazwa pliku"
+        file_name: "Zdjęcie"
         save: "Zapisz"
         id: "Pozycja identyfikacyjna"
         producer: "Producent"

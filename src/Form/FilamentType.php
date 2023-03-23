@@ -17,13 +17,13 @@ class FilamentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('producer',TextType::class, ['label' => "filament.fields.producer"])
-            ->add('name',TextType::class, ['label' => "filament.fields.name"])
-            ->add('color',TextType::class, ['label' => "filament.fields.color"])
-            ->add('material',TextType::class, ['label' => "filament.fields.material"])
-            ->add('temperatureExtruder',TextType::class, ['label' => "filament.fields.temperature_extruder"])
-            ->add('temperatureTable',TextType::class, ['label' => "filament.fields.temperature_table"])
-            ->add('purchaseDate',DateType::class, ['label' => "filament.fields.purchase_date"])
+            ->add('producer',TextType::class, ['label' => "filament.fields.producer", 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
+            ->add('name',TextType::class, ['label' => "filament.fields.name", 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
+            ->add('color',TextType::class, ['label' => "filament.fields.color", 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
+            ->add('material',TextType::class, ['label' => "filament.fields.material", 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
+            ->add('temperatureExtruder',TextType::class, ['label' => "filament.fields.temperature_extruder", 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
+            ->add('temperatureTable',TextType::class, ['label' => "filament.fields.temperature_table", 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
+            ->add('purchaseDate',DateType::class, ['label' => "filament.fields.purchase_date", 'label_attr' => ['class' => "label-control label-form"]])
             ->add('file', FileType::class, [
                 'label' => 'filament.fields.file_name',
                 'mapped' => false,
@@ -37,8 +37,8 @@ class FilamentType extends AbstractType
                         'mimeTypesMessage' => 'filament.fields.file_valid'
                     ])
                 ],
-            ])
-            ->add('save', SubmitType::class, ['label' => "filament.fields.save"])
+                'label_attr' => ['class' => "label-control label-form"]])
+            ->add('save', SubmitType::class, ['label' => "filament.fields.save", 'attr' => ['class' => 'button']])
             ;
     }
     public function configureOptions(OptionsResolver $resolver): void

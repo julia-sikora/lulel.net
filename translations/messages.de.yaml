@@ -1,5 +1,5 @@
 homepage:
-    title: "Startseite :)"
+    title: "Startseite"
     text: "Willkommen auf unserer Webseite!"
 
 register:
@@ -9,21 +9,30 @@ register:
         password: "Passwort: "
         app_password: "Registrierungspasswort: "
         save: "Konto erstellen :)"
-    title: "Registrierung :)"
+    title: "Registrierung"
     text: "Geben Sie Ihre Daten ein und registrieren Sie Ihr neues Konto:"
     flash:
         account_added: "Konto hinzugefügt."
         app_password: "Registrierungspasswort ist falsch."
 
 login:
-    title: "Anmelden :)"
+    register: "Hast du noch kein Konto? Registrieren!"
+    title: "Anmelden"
     text: "Geben Sie Ihre e-Mail Adresse und Ihr Passwort ein, um sich anzumelden:"
     password: "Passwort:"
-    email: "e-Mail Addresse: "
+    email: "E-Mail Addresse: "
     button: 'Anmelden :)'
     keep_me_login: 'Bleiben eingeloggt'
 
 filament:
+    navbar:
+        logout: "Ausloggen"
+        profile: "Mein Profil"
+        contact: "Kontakt"
+        filament: "Filament-logo"
+        create_new: "Neu erstellen"
+        back_to_homepage: "Zurück zur Hauptseite"
+        change_language: "Sprache ändern"
     flash:
         permission: "Du hast keine Berechtigung"
     title_edit: "Filament editieren"
@@ -35,7 +44,7 @@ filament:
         title: "Neues Filament"
     fields:
         file_valid: "Laden Sie eine richtige Datei hoch."
-        file_name: "Dateiname"
+        file_name: "Photo"
         save: "Weiter"
         id: "Identifikationsnummer"
         producer: "Produzent"
@@ -49,6 +58,6 @@ filament:
         create_new: "Neu erstellen"
     button:
         back_to_list: "Zurück zur Liste"
-        edit: "Bearbeiten"
+        edit: "Editieren"
         delete: "Löschen"
         show: "Zeigen"

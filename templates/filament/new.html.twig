@@ -3,6 +3,7 @@
 {% block title %}{{ "filament.new.title" | trans }}{% endblock %}
 
 {% block body %}
+    {% include('filament/navbar.html.twig') %}
     <h1>{{ "filament.new.heading" | trans }}</h1>
 
     {{ include('filament/_form.html.twig') }}
