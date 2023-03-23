@@ -3,8 +3,9 @@
 {% block title %}{{ "filament.title_index" | trans }}{% endblock %}
 
 {% block body %}
+    {% include('filament/navbar.html.twig') %}
     <h1>{{ "filament.heading_index" | trans }}</h1>
-
+    <div class="content">
     {% if filaments is empty %}
         <h2>{{ "filament.fields.no_records" | trans }}</h2>
     {% else %}
@@ -31,25 +32,20 @@
                     <td>{{ filament.material }}</td>
                     <td>{{ filament.temperatureExtruder }}</td>
                     <td>{{ filament.temperatureTable }}</td>
-                    <td>{{ filament.purchaseDate ? filament.purchaseDate|date('Y-m-d H:i:s') : '' }}</td>
-
+                    <td>{{ filament.purchaseDate ? filament.purchaseDate|date('Y-m-d') : '' }}</td>
                     <td style="border:none;">
-                        &nbsp<a>
-                            <button class="button">
-                                <a href="{{ path('app_filament_show', {'id': filament.id}) }}">{{ "filament.button.show" | trans }}</a>
-                            </button>
-                            |
-                            <a>
-                                <button class="button">
-                                    <a href="{{ path('app_filament_edit', {'id': filament.id}) }}">{{ "filament.button.edit" | trans }}</a>
-                                </button>
+                        <button class="button">
+                            <a href="{{ path('app_filament_show', {'id': filament.id}) }}">{{ "filament.button.show" | trans }}</a>
+                        </button>
+                        <button class="button">
+                            <a href="{{ path('app_filament_edit', {'id': filament.id}) }}">{{ "filament.button.edit" | trans }}</a>
+                        </button>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+        </div>
     {% endif %}
-    <br>
-    <button class="button"><a href="{{ path('app_filament_new') }}">{{ "filament.fields.create_new" | trans }}</a>
-    </button>
 {% endblock %}
+

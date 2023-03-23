@@ -1,5 +1,5 @@
 homepage:
-    title: "Homepage :)"
+    title: "Homepage"
     text: "Welcome to our website!"
 
 register:
@@ -9,14 +9,15 @@ register:
         password: "Password: "
         app_password: "Registration password: "
         save: "Create account :)"
-    title: "Registration :)"
+    title: "Registration"
     text: "Enter your details and register your new account:"
     flash:
         account_added: "Account added."
         app_password: "App-password is incorrect."
 
 login:
-    title: "Log in :)"
+    register: "No account yet? Register!"
+    title: "Log in"
     text: "Enter your email and password to sign in:"
     password: "Password:"
     email: "E'mail adress: "
@@ -24,6 +25,14 @@ login:
     keep_me_login: 'Remember me'
 
 filament:
+    navbar:
+        logout: "Log out"
+        profile: "My profile"
+        contact: "Contact"
+        filament: "Filament-logo"
+        create_new: "Create new"
+        back_to_homepage: "Back to homepage"
+        change_language: "Change laguage"
     flash:
         permission: "You don't have a permission"
         delete: "Are you sure you want to delete this item?"
@@ -36,7 +45,7 @@ filament:
         title: "New filament"
     fields:
         file_valid: "Upload a valid file"
-        file_name: "Filename"
+        file_name: "Photo"
         save: "Save"
         id: "Identity"
         producer: "Producer"

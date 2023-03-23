@@ -3,6 +3,7 @@
 {% block title %}{{ "filament.title_show" | trans }}{% endblock %}
 
 {% block body %}
+    {% include('filament/navbar.html.twig') %}
     <h1>{{ "filament.title_show" | trans }} {{ filament.id }}</h1>
     {% if filament.filename is not empty %}
         <div class="frame"><img src="{{ asset('uploads/files/' ~ filament.filename) }}" id="image"></div>

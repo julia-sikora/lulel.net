@@ -3,10 +3,15 @@
 {% block title %}{{ "filament.title_edit" | trans }}{% endblock %}
 
 {% block body %}
+    {% include('filament/navbar.html.twig') %}
     <h1>{{ "filament.title_edit" | trans }}</h1>
 
+<div class="content">
     {{ include('filament/_form.html.twig') }}
-
-    <a href="{{ path('app_filament_index') }}">{{ "filament.button.back_to_list" | trans }}</a>
+    <div>
     {{ include('filament/_delete_form.html.twig') }}
+    </div>
+    <a href="{{ path('app_filament_index') }}">{{ "filament.button.back_to_list" | trans }}</a>
+</div>
+
 {% endblock %}
