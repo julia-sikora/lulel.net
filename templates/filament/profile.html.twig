@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include('filament/_navbar.html.twig') %}
+    <h1>{{ "filament.profile.heading"  | trans }}</h1>
+    <table class="table table-profile">
+        <tbody>
+        <tr>
+            <th>{{ "filament.profile.nickname"  | trans }}</th>
+            <td>{{ user.nickname }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.profile.email"  | trans }}</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>{{ "filament.profile.count"  | trans }}</th>
+            <td>
+                {{ user.filaments|length }}
+            </td>
+        </tr>
+        <tr>
+            <th>{{ "filament.profile.id"  | trans }}</th>
+            <td>
+                {{ user.id }}
+            </td>
+        </tr>
+        <tr>
+            <th>{{ "filament.profile.identifier"  | trans }}</th>
+            <td>
+                {{ user.userIdentifier }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block title %}
+    {{ "filament.profile.heading"  | trans }}
+{% endblock %}
+

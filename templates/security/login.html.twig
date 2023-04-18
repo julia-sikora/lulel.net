@@ -3,7 +3,7 @@
 {% block title %}{{ "login.title" | trans }}{% endblock %}
 
 {% block body %}
-    {% include('flags.html.twig') %}
+    {% include('_flags.html.twig') %}
     <form method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>

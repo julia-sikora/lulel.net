@@ -24,12 +24,40 @@ login:
     button: 'Zaloguj się :)'
     keep_me_login: 'Zapamiętaj mnie'
 
+message:
+    index:
+        heading: "Wiadomości"
+    date_of_creation: "Data utworzenia"
+    read_message: "Status"
+    message_aspect: "Rodzaj wiadomości"
+    text_message: "Treść wiadomości"
+    date: "Data: "
+    id: "ID: "
+    send: "Twoja wiadomość została wysłana!"
+    heading: "Kontakt"
+    title: "Kontakt"
+    text: "Twoja wiadomość"
+    types:
+        question: "pytanie"
+        suggestion: "sugestia"
+        problem: "problem"
+        other: "inne"
+
 filament:
+    profile:
+        identifier: "Login profilu"
+        heading: "Dane konta"
+        id: "ID profilu"
+        count: "Ilość filamentów"
+        nickname: "Nickname"
+        email: "E-mail"
+    heading_search: " dla wyszukiwania:"
     navbar:
+        admin: "Admin"
         logout: "Wyloguj"
         profile: "Mój profil"
         contact: "Kontakt"
-        filament: "Filament-logo"
+        filament: "Filament list"
         create_new: "Stwórz nowy"
         back_to_homepage: "Powrót do strony głównej"
         change_language: "Zmień język"
@@ -61,3 +89,6 @@ filament:
         edit: "Edytuj"
         delete: "Usuń"
         show: "Szczegóły"
+search:
+    form:
+        save: "Wyszukaj"

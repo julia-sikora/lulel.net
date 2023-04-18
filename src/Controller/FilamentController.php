@@ -1,10 +1,15 @@
 <?php
+
 declare(strict_types=1);
+
 namespace App\Controller;
 
 use App\Entity\Filament;
 use App\Form\FilamentType;
+use App\Form\NavbarSearchType;
+use App\Model\Form\NavbarSearchModel;
 use App\Repository\FilamentRepository;
+use App\Trait\ControllerTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -16,6 +21,25 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 #[Route('/filament')]
 class FilamentController extends AbstractController
 {
+    use ControllerTrait;
+
+    #[Route('/search', name: 'app_filament_search')]
+    public function search(Request $request, FilamentRepository $filamentRepository): Response
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED');
+        $navbarSearchModel = new NavbarSearchModel();
+        $form = $this->createForm(NavbarSearchType::class, $navbarSearchModel, ['action' => $this->generateUrl('app_filament_search'), 'attr' => ['class' => 'd-flex ms-auto m-1']]);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('filament/index.html.twig', ['filaments' => $filamentRepository->search($navbarSearchModel->getText(), $this->getUser()), "search" => $navbarSearchModel->getText()]);
+        }
+        if (!$request->isFromTrustedProxy()) {
+            return $this->redirectToRoute('app_filament_index');
+        }
+
+        return $this->render('search.html.twig', ['form' => $form]);
+    }
+
     #[Route('/', name: 'app_filament_index', methods: ['GET'])]
     public function index(FilamentRepository $filamentRepository): Response
     {
@@ -44,7 +68,7 @@ class FilamentController extends AbstractController
                         $this->getParameter('app.files_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {
+                } catch (FileException) {
                 }
                 $filament->setFilename($newFilename);
             }
@@ -93,7 +117,7 @@ class FilamentController extends AbstractController
                         $this->getParameter('app.files_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {
+                } catch (FileException) {
                 }
                 $filament->setFilename($newFilename);
             }
@@ -121,5 +145,6 @@ class FilamentController extends AbstractController
 
         return $this->redirectToRoute('app_filament_index', [], Response::HTTP_SEE_OTHER);
     }
+
 }
 

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "message.send" | trans }}{% endblock %}
+
+{% block body %}
+    {% include('filament/_navbar.html.twig') %}
+    <h1>{{ "message.send" | trans }}</h1>
+    <h4>{{ "message.id" | trans }}{{ message.id }}</h4>
+    <h4>{{ "message.date" | trans }}{{ message.dateOfCreation.format('d.m.Y H:i:s') }}</h4>
+{% endblock %}
