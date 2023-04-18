@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include('filament/_navbar.html.twig') %}
+    <h1>{{ "message.index.heading" | trans }}</h1>
+    {% if messages is empty %}
+        <h2>{{ "filament.fields.no_records" | trans }}</h2>
+    {% else %}
+        <table class="table table-messages">
+            <thead>
+            <tr>
+                <th>{{ "filament.fields.id" | trans }}</th>
+                <th>{{ "message.text_message" | trans }}</th>
+                <th>{{ "message.message_aspect" | trans }}</th>
+                <th>{{ "message.read_message" | trans }}</th>
+                <th>{{ "message.date_of_creation" | trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for message in messages %}
+                <tr>
+                    <td>{{ message.id }}</td>
+                    <td>{{ message.textMessage }}</td>
+                    <td>{{ message.messageAspect.value | trans }}</td>
+                    <td>{{ message.readMessage }}</td>
+                    <td>{{ message.dateOfCreation ? message.dateOfCreation|date('Y-m-d H:m:') : '' }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+    {{ "message.index.heading" | trans }}
+{% endblock %}
+

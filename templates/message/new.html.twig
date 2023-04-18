@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "message.title" | trans }}{% endblock %}
+
+{% block body %}
+    {% include('filament/_navbar.html.twig') %}
+    <h1>{{ "message.heading" | trans }}</h1>
+    {{ include('message/_form.html.twig') }}
+{% endblock %}
