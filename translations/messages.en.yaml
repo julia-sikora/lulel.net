@@ -24,12 +24,40 @@ login:
     button: 'Sign in :)'
     keep_me_login: 'Remember me'
 
+message:
+    index:
+        heading: "Messages"
+    date_of_creation: "Date of creation"
+    read_message: "Status"
+    message_aspect: "Message type"
+    text_message: "Message content"
+    date: "Date: "
+    id: "ID: "
+    send: "Your message has been sent!"
+    heading: "Contact us"
+    title: "Contact"
+    text: "Your message"
+    types:
+        question: "question"
+        suggestion: "suggestion"
+        problem: "problem"
+        other: "other"
+
 filament:
+    profile:
+        identifier: "Login"
+        heading: "Account information"
+        id: "Profile-ID"
+        count: "Number of filaments"
+        nickname: "Nickname"
+        email: "E-mail"
+    heading_search: " for search:"
     navbar:
+        admin: "Admin"
         logout: "Log out"
         profile: "My profile"
         contact: "Contact"
-        filament: "Filament-logo"
+        filament: "Filament list"
         create_new: "Create new"
         back_to_homepage: "Back to homepage"
         change_language: "Change laguage"
@@ -62,3 +90,6 @@ filament:
         edit: "Edit"
         delete: "Delete"
         show: "Show"
+search:
+    form:
+        save: "Search"

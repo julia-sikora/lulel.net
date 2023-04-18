@@ -3,8 +3,13 @@
 {% block title %}{{ "filament.title_index" | trans }}{% endblock %}
 
 {% block body %}
-    {% include('filament/navbar.html.twig') %}
-    <h1>{{ "filament.heading_index" | trans }}</h1>
+    {% include('filament/_navbar.html.twig') %}
+    <h1>{{ "filament.heading_index" | trans }}
+        {% if search is defined %}
+            {{ "filament.heading_search" | trans }}
+            "{{ search }}"
+        {% endif %}
+    </h1>
     <div class="content">
     {% if filaments is empty %}
         <h2>{{ "filament.fields.no_records" | trans }}</h2>
