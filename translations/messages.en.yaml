@@ -4,6 +4,7 @@ homepage:
 
 register:
     form:
+        repeat_password: "Repeat password:"
         email: "E'mail adress: "
         name: "Nickname: "
         password: "Password: "
@@ -12,6 +13,7 @@ register:
     title: "Registration"
     text: "Enter your details and register your new account:"
     flash:
+        password: "Passwords are different!"
         account_added: "Account added."
         app_password: "App-password is incorrect."
 

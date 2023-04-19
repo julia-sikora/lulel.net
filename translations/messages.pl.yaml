@@ -4,6 +4,7 @@ homepage:
 
 register:
     form:
+        repeat_password: "Powtórz hasło:"
         email: "Adres e-mail: "
         name: "Nickname: "
         password: "Hasło: "
@@ -12,6 +13,7 @@ register:
     title: "Rejestracja"
     text: "Podaj swoje dane i zarejestruj nowe konto:"
     flash:
+        password: "Hasła różnią się!"
         account_added: "Konto dodane."
         app_password: "Hasło rejestracji niepoprawne."
 

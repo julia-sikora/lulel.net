@@ -21,6 +21,7 @@ class RegisterType extends AbstractType
             ->add('email', EmailType::class, ['label' => "register.form.email" , 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
             ->add('nickname', TextType::class, ['label' => "register.form.name" , 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
             ->add('password', PasswordType::class, ['label' => "register.form.password" , 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
+            ->add('repeatPassword', PasswordType::class, ['label' => "register.form.repeat_password" , 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
             ->add('appPassword', PasswordType::class, ['label' => "register.form.app_password" , 'attr' => ['class' => "form-control input-control"], 'label_attr' => ['class' => "label-control label-form"]])
             ->add('save', SubmitType::class, ['label' => "register.form.save", 'attr' => ['class' => 'button']]);
     }
