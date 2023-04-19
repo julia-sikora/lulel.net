@@ -9,6 +9,7 @@ class RegisterModel
     private ?string $email;
     private ?string $nickname;
     private ?string $password;
+    private ?string $repeatPassword;
     private ?string $appPassword;
 
     public function getNickname(): ?string
@@ -40,7 +41,15 @@ class RegisterModel
     {
         $this->password = $password;
     }
+    public function getRepeatPassword(): ?string
+    {
+        return $this->repeatPassword;
+    }
 
+    public function setRepeatPassword(?string $repeatPassword): void
+    {
+        $this->repeatPassword = $repeatPassword;
+    }
     public function getAppPassword(): ?string
     {
         return $this->appPassword;
